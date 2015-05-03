@@ -12,8 +12,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'devise', '~> 3.4.1'
-gem 'paperclip', '~> 4.2'
-gem 'aws-sdk', '~> 1.20.0'
+gem "paperclip", "~> 4.2" # As suggested in https://github.com/thoughtbot/paperclip
+gem 'aws-sdk', '~> 2.0.39' # Previously had this set to 1.20.0
 
 group :development, :test do
 	gem 'sqlite3'
