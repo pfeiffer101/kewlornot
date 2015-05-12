@@ -17,14 +17,16 @@
             Edit 
           <% end %>
 				<% end %>
+			<% end %>
 
+			<div class="btn-group pull-right">
 				<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
 					<span class="glyphicon glyphicon-heart"> 
 						<%= @pin.get_upvotes.size %>
 					</span>						
 				<% end %>
-
-			<% end %>
+			</div>
+			
 		</div>
 	</div>
 </div>

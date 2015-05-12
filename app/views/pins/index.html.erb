@@ -8,20 +8,29 @@
         <p><%= pin.description %></p>
         <p><strong><%= pin.user.name if pin.user %></strong></p>
 
-          <% if user_signed_in? %>            
+          <% if user_signed_in? %>    
+
              <% if pin.user == current_user %>
-              <div class="actions">  
-                <%= link_to edit_pin_path(pin) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit 
-                <% end %>
-                <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
+              <div class="glyphicon-group pull-left">
+                <div class="actions">  
+                  <%= link_to edit_pin_path(pin) do %>
+                    <span class="glyphicon glyphicon-edit"></span>                  
+                  <% end %>
+                  <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>                  
+                  <% end %>
+                </div>
               </div>
-            <% end %>          
+            <% end %>
           <% end %>
+
+          <div class="btn-group pull-right">
+            <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-heart"> 
+                <%= pin.get_upvotes.size %>
+              </span>           
+            <% end %>
+          </div>        
 
       </div>
     </div>
