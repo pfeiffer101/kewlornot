@@ -1,5 +1,3 @@
-<%= link_to 'Back', pins_path %>
-
 <div class="row">
 	<div class="col-md-offset-2 col-md-8">
 		<div class="panel panel-default">
@@ -12,12 +10,20 @@
 			<p><strong><%= @pin.user.name if @pin.user %></strong></p>
 
 			<% if user_signed_in? %>
+
 				<% if @pin.user == current_user %>
 					<%= link_to edit_pin_path(@pin) do %>
             <span class="glyphicon glyphicon-edit"></span>
             Edit 
           <% end %>
 				<% end %>
+
+				<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
+					<span class="glyphicon glyphicon-heart"> 
+						<%= @pin.get_upvotes.size %>
+					</span>						
+				<% end %>
+
 			<% end %>
 		</div>
 	</div>
