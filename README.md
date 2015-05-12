@@ -1,6 +1,3 @@
-# One Month Rails
+# Kewl Or Not
 
-This is the pinteresting sample application for 
-[*One Month Rails*]  (http://onemonthrails.com)
-
-by [Mattan Griffel] (http://mattangriffel.com)
+This is a pinterest like sample application 
